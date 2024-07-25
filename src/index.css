@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Branch";
+  src: url("/fonts/Branch.ttf");
+}
+@font-face {
+  font-family: "Absans";
+  src: url("/fonts/Absans-Regular.ttf");
+}
+@font-face {
+  font-family: "Pigarnos";
+  src: url("/fonts/Pigarnos.ttf");
+}
+
+@layer base {
+  /* Hiding Scrollbar */
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Base Styles */
+  body {
+    @apply scroll-smooth bg-dark text-light;
+  }
+  p,
+  a {
+    @apply font-Absans;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-Pigarnos;
+  }
+
+  /* selection */
+  ::selection {
+    @apply bg-main text-dark;
+  }
+}
+
+@layer utilities {
+  .burger {
+    @apply w-full;
+    &::after,
+    &::before {
+      @apply content-[""] block h-[1px] w-[65%] m-auto bg-light relative transition-transform duration-300 z-[99];
+    }
+    &::after {
+      top: -5px;
+    }
+    &::before {
+      top: 5px;
+    }
+  }
+  .burgerActive {
+    &::after {
+      transform: rotate(45deg);
+      top: -1px;
+    }
+    &::before {
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
+  .wordSpace {
+    word-spacing: 8px;
+  }
+  .circ {
+    @apply absolute bottom-[-100%] left-0 bg-main/70 h-full w-[100%] rounded-[50%] z-[1] transition-all duration-[0.4s];
+  }
+  button:hover .circ {
+    @apply bottom-0 rounded-[25%];
+  }
+  button:hover p {
+    @apply md:text-dark;
+  }
+
+  .mainText {
+    -webkit-text-stroke: 0.1px #e6e5dd;
+  }
+}

@@ -1,0 +1,11 @@
+export { default as Hero } from "./Hero";
+export { default as ImageGallery } from "./ImageGallery";
+export { default as Models } from "./Models";
+export { default as Lifestyle } from "./Lifestyle";
+export { default as Tourbillion } from "./Tourbillion";
+export { default as Features } from "./Features";
+export { default as TopGear } from "./TopGear";
+export { default as Comfort } from "./Comfort";
+export { default as Collaborations } from "./Collaborations";
+export { default as Footer } from "./Footer";
+export { default as Preloader } from "./Preloader";
